@@ -8,7 +8,7 @@ At the top right of the main courtyard, after thawing the Frost Tower door and f
   He tells you to review a couple of lib docs - the npm express-session package (https://www.npmjs.com/package/express-session) and the mysqljs/mysql package (https://github.com/mysqljs/mysql).
 </details>
 
-2. Exploit the first vulnerability
+2. Exploit the first vulnerability on the https://staging.jackfrosttower.com/ website
 <details>
   <summary>Hint 1</summary>
   The server.js file imports the express-session package. Take a look at how it uses this lib to find developer flaws in session management.
@@ -29,7 +29,7 @@ At the top right of the main courtyard, after thawing the Frost Tower door and f
   Submit the /contact form using some email address. Submit the form again, using the same email address. You now have a session and can navigate to /dashboard to confirm.
 </details>
 
-3. Exploit the second vulnerability
+3. Exploit the second vulnerability on the https://staging.jackfrosttower.com/ website
 <details>
   <summary>Hint 1</summary>
   The server.js file imports the mysql package. Take a look at the official docs to identify potential mistake points where developers may accidentally insecurely implement classes/calls.
