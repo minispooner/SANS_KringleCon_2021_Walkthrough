@@ -69,7 +69,7 @@ At the top right of the main courtyard, after thawing the Frost Tower door and f
 
 <details>
   <summary>Answer</summary>
-  I bruteforced the Super Admin token and reset their password and logged in as them. Code below. (CHANGE THE SESSION ID IN THE CODE!)
+  I bruteforced the Super Admin token (mxCamxRUVgBWr3l7uFR8uUbuQcAa496e) and reset their password and logged in as them. Code below. (CHANGE THE SESSION ID IN THE CODE!)
 
 ```
 import requests, string
