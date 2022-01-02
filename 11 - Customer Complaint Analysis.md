@@ -38,7 +38,7 @@ I solved this using tcpdump and did not use the tips from the elf.
   
   The complainer's room number is found in 3 trolls' complaints:
   
-  tcpdump -r jackfrosttower-network.pcap -A | grep "POST /feedback/guest_complaint.php" -A 15 | grep name | grep 1024 | cut -d"&" -f1
+  - tcpdump -r jackfrosttower-network.pcap -A | grep "POST /feedback/guest_complaint.php" -A 15 | grep name | grep 1024 | cut -d"&" -f1
   
   Answer: "Flud Hagg Yaqh"
 </details>
