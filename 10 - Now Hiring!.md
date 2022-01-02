@@ -42,5 +42,5 @@ There's a bonus training terminal in Jacks bathroom that teaches you about cloud
 
 <details>
   <summary>The Probable Assumptions of the Developer, Explained</summary>
-  It's likely that the developer expected to have the web app make an API call to the NPPD site (http://nppd.northpolechristmastown.com/NLBI/YourReportIdGoesHere) in order to retrieve an image of you. The developer forgot to restrict that NPPD URL input field, thus we are able to instead call the metadata service and set that response as our image file. So when we read the image file, we see the SSRF response. We loop over this, submitting the form about 4 times, but each time, updating the SSRF URL based on the previous HTTP Response (which dir to SSRF into next).
+  It's likely that the developer expected to have the web app make an API call to the NPPD site (http://nppd.northpolechristmastown.com/NLBI/YourReportIdGoesHere) in order to retrieve an image of you and save that result as your name.jpg. The developer forgot to restrict that NPPD URL input field, thus we are able to instead call the metadata service and set that response as our image file. So when we read the image file, we see the SSRF response. We loop over this, submitting the form about 4 times, but each time, updating the SSRF URL based on the previous HTTP Response (which dir to SSRF into next).
 </details>
