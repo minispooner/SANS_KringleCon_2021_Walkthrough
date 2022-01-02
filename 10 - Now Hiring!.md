@@ -26,7 +26,7 @@ There's a bonus training terminal in Jacks bathroom that teaches you about cloud
 
 <details>
   <summary>Hint 5</summary>
-  Try using curl to view the raw HTTP artifact response data.
+  If using a browser, you'll see your image request call returns 200 Success but doesn't load anything (Firefox claims it "cannot be displayed because it contains errors"). That's because it's not renderable image data...Try using curl to view the raw HTTP artifact response data. You probably won't see this image loading failure in BurpSuite or using curl unless you've changed some default settings etc. 
 </details>
 
 <details>
@@ -37,7 +37,7 @@ There's a bonus training terminal in Jacks bathroom that teaches you about cloud
   
   "URL to your public NLBI report" = "http://169.254.169.254/latest/meta-data/"
   
-  If using a browser, you'll see your image request call returns 200 Success but doesn't load anything (Firefox claims it "cannot be displayed because it contains errors"). That's because it's not renderable image data - it's the meta-data response data! You probably won't see this image loading failure in BurpSuite or using curl unless you've changed some default settings etc. Now, curl your image URL and you'll be able to see the SSRF result. The curl result will display 2 dirs (be careful to not overlook any results), so you now know which dir to append to your SSRF injection. Repeat the SSRF call and the append a few times until you find the AWS secret key.
+  Curl your image URL and you'll be able to see the SSRF result. The curl result will display 2 dirs (be careful to not overlook any results), so you now know which dir to append to your SSRF injection. Repeat the SSRF call and the append a few times until you find the AWS secret key.
 </details>
 
 <details>
