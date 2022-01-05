@@ -51,3 +51,6 @@ bantime = 60m
 filter = ms
 action = ms
 ```
+
+service fail2ban restart
+/root/naughtylist refresh
