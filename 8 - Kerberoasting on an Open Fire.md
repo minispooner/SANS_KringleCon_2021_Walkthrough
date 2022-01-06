@@ -4,8 +4,11 @@ This challenge opens up after finishing challenge 7 - Printer Exploitation. \
 
 From the challenge name and description, we know this will be a Windows domain and that we'll have to pivot/auth to the various hosts in the domain in order to find the secret sleigh research doc.
 
-Eve Snowshoe will give you a hint after you finish the HoHoNo Fail2Ban challenge in Santa's office. Here's his hint:
-
+Eve Snowshoe will give you a hint after you finish the HoHoNo Fail2Ban challenge in Santa's office. Here's his hint.
+Hint:
+A few resources:
+https://www.youtube.com/watch?v=iMh8FTzepU4
+https://github.com/chrisjd20/hhc21_powershell_snippets
 
 ## Steps
 1. Go to https://register.elfu.org/
