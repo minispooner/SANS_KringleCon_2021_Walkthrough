@@ -1,5 +1,6 @@
 ## Summary
-Inside the Jack Frost tower, click a slot machine and practice web api hacking!\
+Inside the Jack Frost tower, click a slot machine and practice web api hacking!
+
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
