@@ -1,5 +1,6 @@
 ## Summary
-What's the secret access key for for https://apply.jackfrosttower.com/ ? Practice web app hacking - in particular of one type...
+What's the secret access key for for https://apply.jackfrosttower.com/ ? Practice web app hacking - in particular of one type...\
+[Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
 1. Get to know the app, the source code, the functionality. What developer expectations do you need to invalidate?
