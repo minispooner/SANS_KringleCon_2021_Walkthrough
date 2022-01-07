@@ -1,5 +1,6 @@
 ## Summary
-Inside the Jack Frost tower, click a slot machine and practice web api hacking!
+Inside the Jack Frost tower, click a slot machine and practice web api hacking!\
+[Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
 1. Open up BurpSuite and scope the target to the web app or start persisting network traffic in your browser's developer console. Get to know the few main web app calls that your client makes.
