@@ -1,5 +1,6 @@
 ## Summary
-Enter Santa's Castle, go to the Talks floor, enter the left room and talk to the elf and open the Strange USB Device terminal. Practice Rubber Ducky scripting language!\
+Enter Santa's Castle, go to the Talks floor, enter the left room and talk to the elf and open the Strange USB Device terminal. Practice Rubber Ducky scripting language!
+
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
