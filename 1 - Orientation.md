@@ -1,5 +1,7 @@
+## Summary
 This is the first screen you see as you enter the game.
 
+# Steps
 1. Talk to Jingle Ringford
 2. Pick up the USB WiFi adapter
 3. Talk to Jingle Ringford again
