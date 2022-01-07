@@ -10,7 +10,7 @@ When challenge objectives were more of a learning opportunity or lab, my writeup
 [3 - Orientation](3%20-%20Thaw%20Frost%20Tower's%20Entrance.md)\
 [4 - Slot Machine Investigation](4%20-%20Slot%20Machine%20Investigation.md)\
 [5 - Strange USB Device](5%20-%20Strange%20USB%20Device.md)\
-[/6 - Shellcode Primer](6%20-%20Shellcode%20Primer.md)\
+[6 - Shellcode Primer](6%20-%20Shellcode%20Primer.md)\
 [7 - Printer Exploitation](7%20-%20Printer%20Exploitation.md)\
 [8 - Kerberoasting on an Open Fire](8%20-%20Kerberoasting%20on%20an%20Open%20Fire.md)\
 [9 - Splunk!](9%20-%20Splunk!.md)\
