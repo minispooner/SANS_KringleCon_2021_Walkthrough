@@ -7,8 +7,10 @@ From the challenge name and description, we know this will be a Windows domain a
 Eve Snowshoe will give you a hint after you finish the HoHoNo Fail2Ban challenge in Santa's office. Here's his hint.
 Hint:
 A few resources:
-https://www.youtube.com/watch?v=iMh8FTzepU4
-https://github.com/chrisjd20/hhc21_powershell_snippets
+- https://www.youtube.com/watch?v=iMh8FTzepU4
+- https://github.com/chrisjd20/hhc21_powershell_snippets
+
+[Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
 1. Go to https://register.elfu.org/
