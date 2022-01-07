@@ -1,11 +1,20 @@
 ## Summary
-https://caramel.kringlecastle.com/home?investigate=0
+Go to the back of Santa's Castle, in the courtyard, and play the game.\
+[Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
-Click Investigate and click the new links on the left (3 links total) and copy paste out the values like below and extract 1 clue for the filters and 1 clue for the next location.
-Repeat 3 times, run the filters to get the elf name, advance to the next place and you should catch the elf and guess their name.
+1. Click Investigate and click the new links on the left (3 links total) and copy paste out the values for reading later
+2. After "Investigating" 3 times:
+- extract 1 filter clue (to be used later for the Elf filter)
+- extract 1 location clue - this is your next departure location
+3. Repeat above steps 3 times
+4. Add your three Elf clues into the Elf filter and submit to get the Elf's name (write it down)
+5. Advance to the next location and you should catch the elf and be able to guess their name
 
-
+<details>
+  <summary>Example Answer</summary>
+  
+```
 Their next waypoint was something like 51.219, 4.402
 They just contacted us from an address in the 81.244.0.0/14 range.
 They were dressed for 3.0°C and partly cloudy conditions. They kept checking their `Discord` app.
@@ -22,3 +31,5 @@ They were dressed for 5.0°C and partly cloudy conditions. The elf mentioned som
 
 Filter the Elves w the 3 categories (only choose 3 above!)
 Noel Boetie
+```
+</details>
