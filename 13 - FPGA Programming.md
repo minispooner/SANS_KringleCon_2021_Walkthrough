@@ -5,6 +5,8 @@ The Elf at the bottom of Jack's elevator will give you links to hints:
 - https://www.youtube.com/watch?v=GFdG1PJ4QjA
 - https://www.fpga4fun.com/MusicBox.html
 
+[Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
+
 ## Objective
 Hello, students! In exercise #4, we continue our FPGA journey, documenting the creation of the sound chip for this holiday season's new Kurse 'em Out Karen doll. Our goal is to make the doll say its trademark phrase. But, as I always tell you in class, we must walk before we run.
 
