@@ -1,5 +1,6 @@
 ## Summary
-This is the first screen you see as you enter the game.\
+This is the first screen you see as you enter the game.
+
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
