@@ -1,5 +1,6 @@
 ## Summary
-Go to the back of Santa's Castle, in the courtyard, and play the game.\
+Go to the back of Santa's Castle, in the courtyard, and play the game.
+
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
