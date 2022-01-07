@@ -1,6 +1,8 @@
 ## Summary
 Towards the top right of the main courtyard, talk to Grimy McTrollkins to learn about thawing the Frost Tower entrance. You will practice WiFi enumeration and API curling.
 
+[Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
+
 ## Steps
 1. Use the WiFi adapter you picked up in the KringleCon Orientation (Click Hammer at left of game screen)
 2. Open the WiFi CLI
