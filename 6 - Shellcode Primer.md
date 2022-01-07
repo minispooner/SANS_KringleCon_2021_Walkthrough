@@ -1,6 +1,8 @@
 ## Summary
 In Jack's loby (top floor of Jack's tower), click the Shellcode Primer challenge and complete the training at https://tracer.kringlecastle.com/. You'll learn the basics of Shellcode!
 
+[Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
+
 ## Steps
 Complete the 11 Shellcode Primer lessons. 1-10 are good, guided tutorials, while 11 is the challenge. Read everything closely - you can't expect to skim and guess till you pass here. On 11, know that you can assign one REG to another, using `mov REG1, REG2` to move REG2 into REG1 position. So for example, if a syscall returns data into rax, you could move it into rdi by doing `mov rdi, rax`.
 
