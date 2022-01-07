@@ -1,5 +1,6 @@
 ## Summary
-At the top right of the main courtyard, after thawing the Frost Tower door and fixing the Frostivator elevator, go to the top floor, Jack's Office. Enter the left room, called Studio, and talk with Ingreta about the Frost website and download the sourcecode. You will practice sourcecode review and web application hacking.
+At the top right of the main courtyard, after thawing the Frost Tower door and fixing the Frostivator elevator, go to the top floor, Jack's Office. Enter the left room, called Studio, and talk with Ingreta about the Frost website and download the sourcecode. You will practice sourcecode review and web application hacking.\
+[Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
 1. Review the sourcecode for flaws. If you aren't able to find anything, you can go complete the Python coding challenges (where you move the little elf to collect candies) and after level 8, the elf there will give you a few hints about where the Frost Tower Website is vulnerable.
