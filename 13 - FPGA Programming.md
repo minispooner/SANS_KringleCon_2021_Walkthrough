@@ -19,6 +19,8 @@ If $rtoi(MHz * 10) - ($rtoi(freq) * 10) > 4, add 1
 - Prof. Qwerty Petabyte
 
 ## Steps
+After completing, turn on your audio and click on the physical device on the rooftop. Gather the item, place it into the motherboard and enter the new area on top the roof!
+
 Answer
 ```
 // Note: For this lab, we will be working with QRP Corporation's CQC-11 FPGA.
