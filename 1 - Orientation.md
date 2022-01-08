@@ -1,7 +1,7 @@
 ## Summary
 This is the first screen you see as you enter the game.
 
-[Next](2%20-%20Where%20in%20the%20World%20is%20Caramel%20Santaigo%3F.md)\
+[Next Challenge](2%20-%20Where%20in%20the%20World%20is%20Caramel%20Santaigo%3F.md)\
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
