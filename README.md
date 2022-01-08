@@ -7,7 +7,7 @@ When challenge objectives were more of a learning opportunity or lab, my writeup
 ## Table of Contents
 [1 - Orientation](1%20-%20Orientation.md)\
 [2 - Where in the World is Caramel Santaigo?](2%20-%20Where%20in%20the%20World%20is%20Caramel%20Santaigo%3F.md)\
-[3 - Orientation](3%20-%20Thaw%20Frost%20Tower's%20Entrance.md)\
+[3 - That Frost Tower's Entrance](3%20-%20Thaw%20Frost%20Tower's%20Entrance.md)\
 [4 - Slot Machine Investigation](4%20-%20Slot%20Machine%20Investigation.md)\
 [5 - Strange USB Device](5%20-%20Strange%20USB%20Device.md)\
 [6 - Shellcode Primer](6%20-%20Shellcode%20Primer.md)\
