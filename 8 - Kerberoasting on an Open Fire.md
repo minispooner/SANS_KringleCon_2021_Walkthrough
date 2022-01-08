@@ -247,7 +247,7 @@ Find creds for RCE method inside GetProcessInfo.ps1\
 
 ### RCE
 Modify the RCE command for a session instead\
-info: https://github.com/chrisjd20/hhc21_powershell_snippets\
+Info: https://github.com/chrisjd20/hhc21_powershell_snippets \
 Extract the clear-text password.
 ```
 $creds = New-Object System.Management.Automation.PSCredential -ArgumentList ("elfu.local\remote_elf", "A1d655f7f5d98b10!")
@@ -255,10 +255,10 @@ Enter-PSSession -ComputerName 10.128.1.53 -Credential $creds -Authentication Neg
 ```
 
 ### Privilege Escalation
-Info: https://github.com/chrisjd20/hhc21_powershell_snippets\
+Info: https://github.com/chrisjd20/hhc21_powershell_snippets \
 Tip: $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"\
-The first large chunk script uses the remote_elf permissions\
-The second large chunk script uses the SSH user permissions\
+Use https://github.com/dirkjanm/ldapdomaindump to identify remote_elf permissions and which group we want to add.\
+The first large script chunk of the PS snippets uses the remote_elf permissions. The second large chunk script uses the SSH user permissions.\
 Verify SSH username membership in the group:
 ```
 pwsh
