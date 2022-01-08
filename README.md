@@ -1,5 +1,5 @@
 # SANS_KringleCon_2021_Walkthrough
-I finished the [2021 SANS KingleCon Holiday Hack](http://2021.kringlecon.com) in 7 days! This repo contains my walkthroughs, hints and answers of the 13 main objectives and most of the side challenges.
+I finished the [2021 SANS KingleCon Holiday Hack](http://2021.kringlecon.com) in 7 days! This repo contains my walkthroughs, hints and answers for the 13 main objectives and most of the side challenges.
 
 <img src="images/sans_kringlecon_2021_winners_spaceship.png">
 
@@ -23,4 +23,4 @@ When challenge objectives were more of a learning opportunity or lab, my writeup
 
 _Additional Challenges are not linked above but are in the repo._
 
-<div align="center"><img src="images/sans_kringlecon_2021_objectives_completed.png" width=500></div>
+<p align="center"><img src="images/sans_kringlecon_2021_objectives_completed.png" width=500></p>
