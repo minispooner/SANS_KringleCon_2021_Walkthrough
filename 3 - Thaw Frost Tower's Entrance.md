@@ -1,6 +1,7 @@
 ## Summary
 Towards the top right of the main courtyard, talk to Grimy McTrollkins to learn about thawing the Frost Tower entrance. You will practice WiFi enumeration and API curling.
 
+[Next Challenge](4%20-%20Slot%20Machine%20Investigation.md)\
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
