@@ -10,6 +10,7 @@ A few resources:
 - https://www.youtube.com/watch?v=iMh8FTzepU4
 - https://github.com/chrisjd20/hhc21_powershell_snippets
 
+[Next Challenge](9%20-%20Splunk!.md)\
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
