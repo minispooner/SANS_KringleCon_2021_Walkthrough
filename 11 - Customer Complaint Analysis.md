@@ -19,19 +19,19 @@ I solved this using tcpdump and did not use the tips from the elf.
 </details>
 
 <details>
-  <summary>Hint 1</summary>
+  <summary>Find the Trolls - Hint 1</summary>
   Try to find something in common between the three trolls' complaints.
 </details>
 <details>
-  <summary>Hint 2</summary>
+  <summary>Find the Trolls - Hint 2</summary>
   "non-compliant" doesn't only refer to TCP packets and RFCs. What about application-level expectations? (above the HTTP stack)
 </details>
 <details>
-  <summary>Hint 3</summary>
+  <summary>Find the Trolls - Hint 3</summary>
   Look at the complaint submitter name and trollid. One sticks out.
 </details>
 <details>
-  <summary>Answer</summary>
+  <summary>Find the Trolls - Answer</summary>
   This command will give you an obvious fishy smell and should lead you to the answer:
   
   tcpdump -r jackfrosttower-network.pcap -A | grep "POST /feedback/guest_complaint.php" -A 15 | grep name | cut -d"&" -f2 | sed 's/+/ /g'
