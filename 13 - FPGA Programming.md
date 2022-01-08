@@ -1,5 +1,5 @@
 ## Summary
-Go to Jacks rooftop and learn how to program FPGA (wavelengths).
+Go to Jack's rooftop and learn how to program FPGA (wavelengths).
 
 **Objective**: "Write your first FPGA program to make a doll sing. You might get some suggestions from Grody Goiterson, near Jack's elevator."
 
