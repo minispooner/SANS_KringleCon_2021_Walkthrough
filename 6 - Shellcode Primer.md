@@ -1,5 +1,5 @@
 ## Summary
-In Jack's lobby (top floor of Jack's tower), click the Shellcode Primer challenge and complete the training at https://tracer.kringlecastle.com/. You'll learn the basics of Shellcode!
+In Jack's office (top floor of Jack's tower), click the Shellcode Primer challenge and complete the training at https://tracer.kringlecastle.com/. You'll learn the basics of Shellcode!
 
 [Next Challenge](7%20-%20Printer%20Exploitation.md)\
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
