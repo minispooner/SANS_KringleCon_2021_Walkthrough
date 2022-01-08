@@ -9,6 +9,7 @@ The Elf at the bottom of Jack's elevator will give you links to hints:
 
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
+
 ## Objective
 Hello, students! In exercise #4, we continue our FPGA journey, documenting the creation of the sound chip for this holiday season's new Kurse 'em Out Karen doll. Our goal is to make the doll say its trademark phrase. But, as I always tell you in class, we must walk before we run.
 
@@ -18,17 +19,20 @@ Creating a square wave output takes our clock signal (which is also a square wav
 
 Good luck and always remember:
 
-If $rtoi(MHz * 10) - ($rtoi(freq) * 10) > 4, add 1
+    If $rtoi(MHz * 10) - ($rtoi(freq) * 10) > 4, add 1
 
-- Prof. Qwerty Petabyte
+   \- Prof. Qwerty Petabyte
+
 
 ## Steps
-After completing, turn on your audio and click on the physical device on the rooftop. Gather the item, place it into the motherboard and enter the new area on top the roof!
+Read the links and docs to code out the challenge.
 
 **Notes**\
 Reverse the wave from the video\
 125MHz ... 6,250 MHz /2 31:0 *10 ... (32'd625000000 / freq)*10
 
+
+## Answer and Final Victory Scene
 **Answer**
 ```
 // Note: For this lab, we will be working with QRP Corporation's CQC-11 FPGA.
@@ -82,3 +86,7 @@ module tone_generator (
   end
 endmodule
 ```
+
+**Final Victory Scene**
+
+After completing, turn on your audio and click on the physical device on the rooftop. Gather the item, place it into the motherboard and enter the new area on top the roof!
