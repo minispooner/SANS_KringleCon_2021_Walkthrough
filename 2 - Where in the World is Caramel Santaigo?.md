@@ -5,12 +5,17 @@ Go to courtyard in the back of Santa's Castle and play the game.
 
 ## Steps
 1. Click Investigate and click the new links on the left (3 links total) and copy paste out the values for reading later
-2. After "Investigating" 3 times:
+2. After investigating 3 times:
 - extract 1 filter clue (to be used later for the Elf filter)
-- extract 1 location clue - this is your next departure location
-3. Repeat above steps 3 times
-4. Add your three Elf clues into the Elf filter and submit to get the Elf's name (write it down)
-5. Advance to the next location and you should catch the elf and be able to guess their name
+- extract 1 location clue - this is your next destination
+- travel to the next destination
+3. Repeat above steps 3 times, but before traveling the last time, add your three Elf clues into the Elf filter and submit to get the Elf's name (write it down!)
+4. Advance to the next location and you should catch the elf and be able to guess their name
+
+<details>
+  <summary>Hint</summary>
+https://what3words.com/staring.desire.frost
+</details>
 
 <details>
   <summary>Example Answer</summary>
