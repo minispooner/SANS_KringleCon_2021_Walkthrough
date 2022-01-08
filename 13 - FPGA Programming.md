@@ -12,7 +12,7 @@ The Elf at the bottom of Jack's elevator will give you links to hints:
 ## Objective
 Hello, students! In exercise #4, we continue our FPGA journey, documenting the creation of the sound chip for this holiday season's new Kurse 'em Out Karen doll. Our goal is to make the doll say its trademark phrase. But, as I always tell you in class, we must walk before we run.
 
-Before the doll can say anything, we must first have it make noise. _**In this exercise you will design an FPGA module that creates a square wave tone at a variable frequency.**_
+Before the doll can say anything, we must first have it make noise. In this exercise you will design an FPGA module that creates a square wave tone at a variable frequency.
 
 Creating a square wave output takes our clock signal (which is also a square wave) and uses a counter to divide the clock to match the desired frequency. One tricky problem that we'll encounter is that Verilog (v1364-2005) doesn't have a built-in mechanism to round real numbers to integers, so you'll need to devise a means to do that correctly if you want your module to match frequencies accurately.
 
