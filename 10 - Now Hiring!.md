@@ -1,6 +1,8 @@
 ## Summary
-What's the secret access key for for https://apply.jackfrosttower.com/ ? Practice web app hacking - in particular of one type...
+**Objective**: "What is the secret access key for the Jack Frost Tower job applications server? Brave the perils of Jack's bathroom to get hints from Noxious O. D'or."
+- https://apply.jackfrosttower.com/
 
+Practice web app hacking - in particular of one type...
 
 [Next Challenge](11%20-%20Customer%20Complaint%20Analysis.md)\
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
@@ -9,7 +11,7 @@ What's the secret access key for for https://apply.jackfrosttower.com/ ? Practic
 1. Get to know the app, the source code, the functionality. What developer expectations do you need to invalidate?
 
 <details>
-  <summary>Hint 1 - The objective outline tells you to go to Jack's bathroom for some hints. Here's my summary of that hint...</summary>
+  <summary>Jack's Bathroom Hint (Summary)</summary>
 There's a bonus training terminal in Jacks bathroom that teaches you about cloud provider metadata IP and endpoint (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html). Go there for practice and learning, else take this hint ;)
 </details>
 
