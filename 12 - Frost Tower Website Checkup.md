@@ -1,6 +1,7 @@
 ## Summary
 At the top right of the main courtyard, after thawing the Frost Tower door and fixing the Frostivator elevator, go to the top floor, Jack's Office. Enter the left room, called Studio, and talk with Ingreta about the Frost website and download the sourcecode. You will practice sourcecode review and web application hacking.
 
+[Next Challenge](13%20-%20FPGA%20Programming.md)
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
