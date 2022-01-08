@@ -1,11 +1,11 @@
 ## Summary
-Enter Santa's Castle, go to the Talks floor, enter the left room and talk to the elf and open the Strange USB Device terminal. Practice Rubber Ducky scripting language!
+Enter Santa's Castle, go to the Talks floor, enter the left room and talk to the elf and open the Strange USB Device terminal. Practice Rubber Ducky reverse engineering!
 
 [Next Challenge](6%20-%20Shellcode%20Primer.md)\
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
-1. Figure out how to decode the inject.bin file!
+1. Figure out how to decode the inject.bin file
 <details>
   <summary>Hint 1</summary>
   Try Googling for open source Duck Script decoders. Be sure to narrow your search based on available bins on the system (no Java for example)
@@ -14,12 +14,12 @@ Enter Santa's Castle, go to the Talks floor, enter the left room and talk to the
 
 <details>
   <summary>Hint 2</summary>
-  You have to build your own Duck Script parser with the available python bin. I created a copy/paste-able script by extracting code from https://github.com/kevthehermit/DuckToolkit/blob/master/ducktoolkit/decoder.py
+  You have to build your own Duck Script parser with the available python program. I created a script by extracting code from https://github.com/kevthehermit/DuckToolkit/blob/master/ducktoolkit/decoder.py
 </details>
 
 <details>
   <summary>Answer</summary>
-  Run the below in a python session, then extract the base64 output command at the end of the results, exit() from python session, and b64 | rev | decode it!
+  Run the script below in a python session, then extract the base64 output command at the end of the results, exit() from the python session and run the b64 | rev command to decode it!
   
   Answer = "ickymcgoop"
   
