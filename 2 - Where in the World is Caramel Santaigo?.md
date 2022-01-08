@@ -1,6 +1,7 @@
 ## Summary
 Go to courtyard in the back of Santa's Castle and play the game.
 
+[Next Challenge](3%20-%20Thaw%20Frost%20Tower's%20Entrance.md)\
 [Back to Table of Contents](https://github.com/minispooner/SANS_KringleCon_2021_Walkthrough/blob/main/README.md)
 
 ## Steps
